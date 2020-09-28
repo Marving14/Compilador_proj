@@ -8,6 +8,7 @@ tokens = ['ID','PLUS','MINUS','NUMBER','TIMES','DIVIDE','ODD','ASSIGN', 'COMMENT
     'NE','LESS', 'LESS_EQ','GREATER', 'GREATER_EQ','LPARENT','RPARENT','COMMA','SEMMICOLOM','DOT',
     'UPDATE', 'LBRACE', 'RBRACE', 'COMPARE'
 ]
+ 
 
 reservadas = {
     'main':'MAIN',
@@ -112,22 +113,6 @@ def t_error(t):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # testing code
 
 def buscarFicheros(directorio):
@@ -153,8 +138,11 @@ def buscarFicheros(directorio):
 
     return files[int(numArchivo)-1]
 
+# Working dir in lap
+#directorio = 'C:/Users/bryan/Documents/Compiladores/Tareas/Proj/test/'
 
-directorio = 'C:/Users/bryan/Documents/Compiladores/Tareas/Proj/test/'
+# working dir in pc 
+directorio = 'C:/Users/bryan/Documents/compiladores/Compilador_proj/test/'
 
 archivo = buscarFicheros(directorio)
 #combinar directorio con resultado de pruebas
