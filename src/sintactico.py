@@ -19,6 +19,50 @@ precedence = (
     ('left', 'LPARENT', 'RPARENT')
 )
 
+def p_program(p):
+    '''program = block'''
+    p[0] = program(p[1], "program")
+
+def p_constAssignmentList1(p):
+    '''constAssignmentList : ID = NUMBER'''
+    print("constAssignmentList 1")
+
+def p_constAssignmentList2(p):
+    '''constAssignmentList : constAssignmentList, ID = NUMBER'''
+    print("constAssignmentList 2")
+
+def p_varDecl1(p):
+    '''varDecl : VAR ID ;'''
+    print("varDecl 1")
+
+def p_varDecl2(p):
+    '''varDecl : empty'''
+    print("varDecl empty")
+
+
+
+
+def p_(p):
+    ''' = '''
+
+
+def p_(p):
+    ''' = '''
+
+def p_(p):
+    ''' = '''
+
+def p_(p):
+    ''' = '''
+
+def p_(p):
+    ''' = '''
+
+def p_(p):
+    ''' = '''
+
+
+
 
 
 
