@@ -96,7 +96,8 @@ def buscarFicheros(directorio):
 
     return files[int(numArchivo)-1]
 
-directorio = 'C:/Users/bryan/Documents/Compiladores/Tareas/analizador/test/'
+directorio = 'C:/Users/bryan/Documents/compiladores/Compilador_proj/analizador/test/'
+#'C:/Users/bryan/Documents/Compiladores/Tareas/analizador/test/'
 archivo = buscarFicheros(directorio)
 #combinar directorio con resultado de pruebas
 test = directorio + archivo

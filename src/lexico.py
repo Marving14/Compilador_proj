@@ -7,7 +7,7 @@ import sys
 
 reservadas = ['MAIN','PROGRAM','VAR','INT','FLOAT','CHAR','MODULE','VOID',
 'RETURN','READ','WRITE','ELSE','THEN','WHILE','DO','PROCEDURE','OUT','IN','TO',
-'LINE','CIRCLE','ARC','POINT','PENUP','PENDOWN','COLOR','SIZE','CLEAR']
+'LINE','CIRCLE','ARC','POINT','PENUP','PENDOWN','COLOR','SIZE','CLEAR', 'IF', 'FOR']
 
 tokens = reservadas + ['ID','PLUS','MINUS','NUMBER','TIMES','DIVIDE','ODD','ASSIGN','COMMENT',
 'NE','LESS','LESS_EQ','GREATER','GREATER_EQ','LPARENT','RPARENT','COMMA','SEMMICOLOM','DOT',
@@ -83,6 +83,7 @@ def t_error(t):
 
 # testing code
 
+"""
 def buscarFicheros(directorio):
     ficheros = []
     numArchivo = ''
@@ -105,7 +106,8 @@ def buscarFicheros(directorio):
     print("Has escogido \"%s\" \n" %files[int(numArchivo)-1])
 
     return files[int(numArchivo)-1]
-
+"""
+"""
 # Working dir in lap
 #directorio = 'C:/Users/bryan/Documents/Compiladores/Tareas/Proj/test/'
 
@@ -120,12 +122,14 @@ fp = codecs.open(test, "r", "utf-8")
 #leer archivo y 
 cadena = fp.read()
 fp.close()
+"""
 
 analizador = lex.lex()
 
-analizador.input(cadena)
-
+#analizador.input(cadena)
+"""
 while True:
     tok = analizador.token()
     if not tok : break
-    print(tok)
+    print(tok)"""
+
