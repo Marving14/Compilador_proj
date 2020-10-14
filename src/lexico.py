@@ -13,9 +13,7 @@ tokens = reservadas + ['ID','PLUS','MINUS','NUMBER','TIMES','DIVIDE','ODD','ASSI
 'NE','LESS','LESS_EQ','GREATER','GREATER_EQ','LPARENT','RPARENT','COMMA','SEMMICOLOM','DOT',
 'UPDATE','LBRACE','RBRACE','COMPARE']
 
-#tokens = tokens + list(reservadas.values())
 
-# definir lo que hay dentro de los tokens
 
 t_ignore = '\t '
 
@@ -124,7 +122,7 @@ cadena = fp.read()
 fp.close()
 """
 
-analizador = lex.lex()
+#analizador = lex.lex()
 
 #analizador.input(cadena)
 """
