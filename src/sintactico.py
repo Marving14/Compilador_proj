@@ -76,12 +76,6 @@ def p_statement2(p):
     '''statement : CALL ID'''
     print("statement 2 - call")
 
-"""
-def p_statement3(p):
-    '''statement : FOR LPARENT ID ASSIGN expression TO expression RPARENT DO block'''
-    print("Statement 3 - for")
-"""
-
 def p_statement4(p):
     '''statement : IF condition THEN statement'''
     print("Statement 4 - if")
