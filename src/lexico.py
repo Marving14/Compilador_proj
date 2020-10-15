@@ -5,7 +5,7 @@ import os
 import sys
 
 
-reservadas = ['MAIN','PROGRAM','VAR','INT','FLOAT','CHAR','MODULE','VOID',
+reservadas = ['MAIN','PROGRAM','VAR','INT','FLOAT','CHAR','MODULE','VOID', 'TYPE',
 'RETURN','READ','WRITE','ELSE','THEN','WHILE','DO','PROCEDURE','OUT','IN','TO',
 'LINE','CIRCLE','ARC','POINT','PENUP','PENDOWN','COLOR','SIZE','CLEAR', 'IF', 'FOR']
 
