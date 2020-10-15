@@ -10,7 +10,7 @@ precedence = (
     ('right', 'ID', 'PROGRAM', 'MAIN', 'IF', 'WHILE', 'FOR', 'TO'),
     ('right', 'PROCEDURE', 'MODULE', 'RETURN'),
     ('right', 'VAR', 'INT', 'FLOAT', 'CHAR', 'VOID'),
-    ('right', 'ASSIGN', 'READ', 'WRITE'),
+    ('right', 'ASSIGN', 'READ', 'WRITE', 'TYPE'),
     ('right', 'UPDATE'),
     ('left', 'NE'),
     ('left', 'LESS', 'GREATER', 'LESS_EQ', 'GREATER_EQ'),
@@ -26,7 +26,7 @@ def p_program(p):
    # p[0] = program(p[1], "program")
 
 def p_block(p):
-    '''block : constDecl varDecl procDecl statement'''
+    '''block : LBRACE constDecl varDecl procDecl statement RBRACE'''
     print("block")
 
 def p_constDecl(p):
@@ -49,9 +49,37 @@ def p_varDecl1(p):
     '''varDecl : VAR ID SEMMICOLOM'''
     print("varDecl 1")
 
+def p_varDecl2(p):
+    '''varDecl : VAR ID COMMA varDecl SEMMICOLOM'''
+    print("varDecl 1")
+
 def p_varDeclEmpty(p):
     '''varDecl : empty'''
     print("varDecl empty")
+
+def p_type1(p):
+    '''type : INT'''
+    print("type int")
+
+def p_type2(p):
+    '''type : FLOAT'''
+    print("type FLOAT")
+
+def p_type3(p):
+    '''type : CHAR'''
+    print("type CHAR")
+
+def p_type4(p):
+    '''type : VOID'''
+    print("type VOID")
+
+def p_method(p):
+    '''method : TYPE MODULE ID LPARENT expression RPARENT SEMMICOLOM'''
+    print("method 1")
+
+def p_method(p):
+    '''method : TYPE MODULE ID LPARENT expressionList RPARENT SEMMICOLOM'''
+    print("method 1")
 
 def p_identList1(p):
     '''identList : ID'''
@@ -62,8 +90,9 @@ def p_identList2(p):
     print("IdentList 2")
 
 def p_procDecl1(p):
-    '''procDecl : procDecl PROCEDURE ID SEMMICOLOM block SEMMICOLOM '''
+    '''procDecl : procDecl PROCEDURE ID SEMMICOLOM block SEMMICOLOM'''
     print("procDecl1")
+
 def p_procDeclEmpty(p):
     '''procDecl : empty'''
     print("nulo")
@@ -76,18 +105,16 @@ def p_statement2(p):
     '''statement : CALL ID'''
     print("statement 2 - call")
 
-"""
-def p_statement3(p):
-    '''statement : FOR LPARENT ID ASSIGN expression TO expression RPARENT DO block'''
-    print("Statement 3 - for")
-"""
-
 def p_statement4(p):
-    '''statement : IF condition THEN statement'''
+    '''statement : IF condition THEN block'''
     print("Statement 4 - if")
 
+def p_statement41(p):
+    '''statement : IF condition THEN block ELSE block '''
+    print("Statement 41 - if")
+
 def p_statement5(p):
-    '''statement : WHILE condition DO statement'''
+    '''statement : WHILE condition DO block'''
     print("Statement 5 - while")
 
 def p_statementEmpty(p):
@@ -99,7 +126,7 @@ def p_statementList1(p):
     print("Statement list 1")
 
 def p_statementList2(p):
-    '''statementList : statementList SEMMICOLOM statement'''
+    '''statementList : statementList COMMA statement'''
     print("Statement list 2")
 
 def p_condition1(p):
@@ -138,6 +165,17 @@ def p_relation7(p):
     '''relation : COMPARE'''
     print("relation 7")
 
+def p_expressionList1(p):
+    '''expressionList : expression'''
+    print("expressionList 1")
+
+def p_expressionList2(p):
+    '''expressionList : expressionList COMMA expression'''
+    print("expressionList 2")
+
+def p_expressionList3(p):
+    '''expressionList :  empty'''
+    print("empty ")
 
 def p_expression1(p):
     '''expression : term'''
@@ -187,6 +225,10 @@ def p_factor2(p):
 def p_factor3(p):
     '''factor : LPARENT expression RPARENT'''
     print("factor 3")
+
+def p_main(p):
+    '''main : MAIN LPARENT RPARENT block''' 
+    print("main ")
 
 def p_empty(p):
     '''empty :'''
